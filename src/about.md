@@ -1,6 +1,6 @@
 ---
 layout: default
-title: This is me.
+title: dreamerlzl's annals
 ---
 
-She/her. A software person. Singapore.
+He/his. A lifelong learner for freedom.

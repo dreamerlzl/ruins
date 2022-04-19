@@ -1,8 +1,25 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
+const searchFilter = require("./src/js/searchFilter.js");
+const { DateTime } = require("luxon");
 
 module.exports = function(eleventyConfig) {
+  // for elasticlunr search
+  eleventyConfig.addFilter("search", searchFilter)
+  eleventyConfig.addPassthroughCopy("src/js");
+  eleventyConfig.addCollection("posts", collection => {
+    return [...collection.getFilteredByGlob("./src/posts/**/*.md")]
+  })
+
+  eleventyConfig.addFilter('htmlDateString', (dateObj) => {
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+  });
+
+  eleventyConfig.addFilter("readableDate", dateObj => {
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
+  });
+
   // Plugins
   eleventyConfig.addPlugin(syntaxHighlight)
   

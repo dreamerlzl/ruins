@@ -21,8 +21,11 @@
     "postcss": "^8.4.5"
   },
   "dependencies": {
+    "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@tailwindcss/typography": "^0.5.1",
     "autoprefixer": "^10.4.2",
+    "elasticlunr": "^0.9.5",
+    "luxon": "^2.3.2",
     "markdown-it": "^12.3.2",
     "markdown-it-anchor": "^8.4.1",
     "tailwindcss": "^3.0.18"

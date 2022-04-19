@@ -1,0 +1,19 @@
+---
+layout: search-layout
+title: Search Blogs
+---
+
+{% block content %}
+<div class="field">
+  <input type="search" placeholder="blog title or tags" id="searchField">
+</div>
+<ol id="searchResults"></ol>
+<div id="noResultsFound" style="display: none">
+  <p>No results found.</p>
+</div>
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"
+></script>
+<script type="text/javascript" src="/js/search.js"></script>
+{% endblock %}
