@@ -1,6 +1,7 @@
-#/bin/bash
+#!/bin/bash
 
-TITLE=$@
+TITLE=$1
+EXCERPT=$2  # optional
 TITLEF=$(echo $TITLE | tr " " "-")
 YEAR=$(date +"%Y")
 MONTH=$(date +"%m")
@@ -11,11 +12,12 @@ FILENAME="src/posts/$YEAR/$MONTH/$TITLEF.md"
 cat <<EOF > $FILENAME
 ---
 title: "$TITLE"
+published: false
 date: "$(date '+%Y-%m-%d')"
 tags:
 -
 ---
-
+$EXCERPT
 <!-- excerpt -->
 
 EOF
