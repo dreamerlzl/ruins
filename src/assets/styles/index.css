@@ -9,3 +9,10 @@ h1 > a.header-anchor {
 h2 > a.header-anchor {
   font-weight: 700;
 }
+
+a.simple-link:hover {
+  font-size:150%;
+}
+a.simple-link {
+  color:#008000;
+}
