@@ -1,6 +1,6 @@
 ---
 layout: default
-title: dreamerlzl's annals
+title: Annals
 ---
 
 He/his. A lifelong learner for freedom.

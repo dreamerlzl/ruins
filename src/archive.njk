@@ -1,6 +1,6 @@
 ---
 layout: default
-title: all blogs
+title: Scrolls
 permalink: /blogs/
 pagination:
   data: collections.posts
@@ -9,31 +9,52 @@ pagination:
   reverse: true
 ---
 
-<ul>
-  {% for post in posts %}
-  <!-- <li><a href="{{ post.url }}">{{ post.data.title }}</a></li> -->
-  <li>
-    <a href="{{ post.url | url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-    <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-    {% for tag in post.data.tags %}
-      {% if tag != "posts" %}
-        {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-        <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-      {% endif %}
-    {% endfor %}
-  </li>
-  {% endfor %}
-</url>
-
-<p>
-  {% if pagination.href.previous %}
-    <a href="{{ pagination.href.previous }}">Previous</a>
-  {% else %}
-    Previous
-  {% endif %} /
-  {% if pagination.href.next %}
-    <a href="{{ pagination.href.next }}">Next</a>
-  {% else %}
-    Next
-  {% endif %}
-</p>
+{% block head %}
+  <link rel="stylesheet" href="{{ '/assets/styles/archive.css' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/styles/external.css' | url }}">
+    <!-- <link rel="stylesheet" href="{{ '/assets/styles/materialize.min.css' | url }}" media="screen,projection"> -->
+      <!--Import Google Icon Font-->
+      <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    {% endblock %}
+    <p>
+      You can also search blogs by
+      <a href="/tags" class="btn btn-shadow-drop btn-shadow-drop--blue">tags</a>
+      or
+      <a href="/search" class="btn btn-shadow-drop btn-shadow-drop--purple">blog titles</a>.
+    </p>
+    <br>
+      <ul>
+        {% for post in posts %}
+          <!-- <li><a href="{{ post.url }}">{{ post.data.title }}</a></li> -->
+          <li>
+            <a href="{{ post.url | url }}" class="postlist-link">
+              {% if post.data.title %}
+                {{ post.data.title }}
+              {% else %}
+                <code>{{ post.url }}</code>
+              {% endif %}
+            </a>
+            <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+            {% for tag in post.data.tags %}
+              {% if tag != "posts" %}
+                {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+                <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+              {% endif %}
+            {% endfor %}
+          </li>
+        {% endfor %}
+      </url>
+      <br>
+        <p>
+          {% if pagination.href.previous %}
+            <a href="{{ pagination.href.previous }}">Previous</a>
+          {% else %}
+            Previous
+          {% endif %}
+          /
+          {% if pagination.href.next %}
+            <a href="{{ pagination.href.next }}">Next</a>
+          {% else %}
+            Next
+          {% endif %}
+        </p>

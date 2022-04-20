@@ -1,26 +1,15 @@
 ---
-layout: default
+layout: main
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-        <title>{{ title }} | Eleventy Search Demo</title>
-        <meta name="robots" content="noindex"/>
-        <link rel="stylesheet" href="{{ '/assets/styles/archive.css' }}">
-    </head>
-    <body>
-        {{ content | safe }}
-        <div>
-        <!-- <style scoped>
-        h3:hover {
-          background-color: yellow;
-        }
-        </style> -->
-        {% block content %}{% endblock content %}
-        </div>
-    </body>
-</html>
+{% block head %}
+  <link rel="stylesheet" href="{{ '/assets/styles/archive.css' | url }}">
+{% endblock %}
+
+<p class="text-5xl md:text-6xl font-black py-10 md:py-20 leading-tight">
+ {{ title }}
+</p>
+  
+{% include "nav.liquid" %}
+
+{{ content | safe }}

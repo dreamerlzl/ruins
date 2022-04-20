@@ -1,7 +1,11 @@
 ---
-layout: search-layout
+layout: default
 title: Search Blogs
 ---
+
+{% block head %}
+  <link rel="stylesheet" href="{{ '/assets/styles/archive.css' | url }}">
+{% endblock %}
 
 {% block content %}
 <div class="field">
