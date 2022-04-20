@@ -16,3 +16,8 @@ a.simple-link:hover {
 a.simple-link {
   color:#008000;
 }
+
+figcaption {
+  font-style: italic;
+  font-align: center;
+}
