@@ -28,6 +28,14 @@
   </head>
 
   <body class="dark:text-white dark:bg-black">
+    {% if bg %}
+      <div style="
+          background-image: linear-gradient(transparent, white 110%), url('/assets/img/{{ bg }}'); 
+          background-size: cover;
+          height:480px;
+      ">
+      </div>
+    {% endif %}
     {{ content }}
     
   <script>
