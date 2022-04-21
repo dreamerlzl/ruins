@@ -15,6 +15,17 @@
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <link href="/assets/styles/tailwind.css" rel="stylesheet" />
     <link href="/assets/styles/index.css" rel="stylesheet" />
+    {% if bg %}
+    <style>
+    body {
+      background-image: linear-gradient(transparent 5%, white 55%), url('/assets/img/cover/{{ bg }}');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    </style>
+    {% endif %}
+
     {% block head %}
     {% endblock %}
     <script>
@@ -29,13 +40,14 @@
 
   <body class="dark:text-white dark:bg-black">
     {% if bg %}
-      <div style="
-          background-image: linear-gradient(transparent, white 110%), url('/assets/img/{{ bg }}'); 
+      <!-- <div style="
+          background-image: linear-gradient(transparent, white 100%), url('/assets/img/cover/{{ bg }}'); 
           background-size: cover;
           height:480px;
       ">
-      </div>
+      </div> -->
     {% endif %}
+
     {{ content }}
     
   <script>

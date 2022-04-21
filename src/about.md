@@ -1,6 +1,7 @@
 ---
 layout: about
 title: Persona
+bg: aria_the_box.jpg
 ---
 
 <figure style="text-align: center; padding-bottom: 15px; padding-left: 15px; float: right; display: block;">
