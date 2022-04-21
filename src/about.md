@@ -1,7 +1,8 @@
 ---
 layout: about
 title: Persona
-bg: aria_the_box.jpg
+bg: alpha.png
+bg_percent: 75
 ---
 
 <figure style="text-align: center; padding-bottom: 15px; padding-left: 15px; float: right; display: block;">
@@ -58,7 +59,7 @@ bg: aria_the_box.jpg
   - [Shirobako/白箱](http://bangumi.tv/subject/110467)
   - [Girls und Panzer del Film/少女与战车剧场版](http://bangumi.tv/subject/72266)
 
-# How this site is made?
+# How this site is built?
 - I have little knowledge about frontend stack,
 - But I believe you can build a much better one after reading the following blogs!
   - [11ty 101](https://snipcart.com/blog/11ty-tutorial)
