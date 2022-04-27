@@ -6,7 +6,7 @@ tags:
 - container
 ---
 
-Beginner's guide to write acceptable dockerfiles
+A beginner's guide to write acceptable dockerfiles
 <!-- excerpt -->
 
 ## ov
