@@ -1,5 +1,7 @@
 {
     "layout": "post.liquid",
     "tags": ["posts"],
-    "published": true
+    "published": true,
+    "bg": "rust_bg.jpg",
+    "bg_percent": 100
 }

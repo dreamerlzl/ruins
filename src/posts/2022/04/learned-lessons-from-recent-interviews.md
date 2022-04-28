@@ -1,5 +1,5 @@
 ---
-title: "learned-lessons-from-recent-interviews"
+title: "learned lessons from recent interviews"
 published: true
 date: "2022-04-24"
 tags:
