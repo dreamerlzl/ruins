@@ -1,7 +1,7 @@
 ---
 layout: about
 title: Persona
-bg: alpha.png
+bg: alpha.jpg
 bg_percent: 75
 ---
 
