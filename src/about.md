@@ -35,6 +35,7 @@ bg_percent: 75
 </figure>
 
 # Overview
+
 - A lifelong learner for self-reliance
 - Currently a software engineer
 - Besides learning & working
@@ -43,6 +44,7 @@ bg_percent: 75
   - 🔭 star gazing
   - 🐦 bird watching
 
+<!--
 # My Favorite
 - mangas
   - [Aria/水星领航员](http://bangumi.tv/subject/5392)
@@ -58,10 +60,13 @@ bg_percent: 75
   - [Ping Pong The Animatoin/乒乓](http://bangumi.tv/subject/93739)
   - [Shirobako/白箱](http://bangumi.tv/subject/110467)
   - [Girls und Panzer del Film/少女与战车剧场版](http://bangumi.tv/subject/72266)
+-->
 
 # How this site is built?
+
 - I have little knowledge about frontend stack,
-- But I believe you can build a much better one after reading the following blogs!
+- But I believe you can build a much better one after reading the following
+  blogs!
   - [11ty 101](https://snipcart.com/blog/11ty-tutorial)
   - [add search to 11ty via elasticlunr](https://www.belter.io/eleventy-search/)
 - [the repo of this site(forked from another blog project)](https://github.com/dreamerlzl/ruins)

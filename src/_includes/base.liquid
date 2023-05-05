@@ -13,6 +13,7 @@
     <link rel="manifest" href="/manifest.json" />
 
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link href="/assets/styles/tailwind.css" rel="stylesheet" />
     <link href="/assets/styles/index.css" rel="stylesheet" />
     <link href="/assets/styles/nav.css" rel="stylesheet" />
@@ -42,7 +43,7 @@
   <body class="dark:text-white dark:bg-black">
     {% if bg %}
       <!-- <div style="
-          background-image: linear-gradient(transparent, white 100%), url('/assets/img/cover/{{ bg }}'); 
+          background-image: linear-gradient(transparent, white 100%), url('/assets/img/cover/{{ bg }}');
           background-size: cover;
           height:480px;
       ">
@@ -50,7 +51,7 @@
     {% endif %}
 
     {{ content }}
-    
+
   <script>
     document.getElementById("toggleDarkMode").addEventListener("click", function() {
       if (isDarkMode()) {
