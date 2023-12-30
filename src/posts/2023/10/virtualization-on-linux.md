@@ -13,7 +13,7 @@ Beginner's guide to setup VMs on Linux, without the pain of VirtualBox
 
 # Why?
 
-- Virtualbox's installation isn't not smooth
+- Virtualbox's installation is more tiresome
 - Virutalbox's CLI looks more complex. Check it
   [here](https://www.oracle.com/technical-resources/articles/it-infrastructure/admin-manage-vbox-cli.html)
 
