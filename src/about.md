@@ -5,27 +5,32 @@ bg: alpha.jpg
 bg_percent: 75
 ---
 
-<figure style="text-align: center; padding-bottom: 15px; padding-left: 15px; float: right; display: block;">
-<table style="border-collapse: separate; border-spacing: 1px 1px;">
+<figure style="text-align: center;  padding-left: 10em; float: right; display: block;">
+<table style="border-collapse: separate; border-spacing: 1px 1px;" >
 <tr>
   <th>
-    <a href="mailto:linzlang@mail2.sysu.edu.cn" style="text-decoration:none" >
+    <a href="mailto:linzlang@mail2.sysu.edu.cn" style="text-decoration:none" title="linzlang@mail2.sysu.edu.cn" >
       <i style="font-size:24px" class="fa">&#xf0e0;</i>
     </a>
   </th>
   <th>
-    <a href="https://www.linkedin.com/in/dreamerlzl/" style="text-decoration:none" >
+    <a href="https://www.linkedin.com/in/dreamerlzl/" style="text-decoration:none" title="linkedin" >
         <i style="font-size:24px" class="fa">&#xf08c;</i>
     </a>
   </th>
   <th>
-    <a href="https://github.com/dreamerlzl" style="text-decoration:none" >
+    <a href="https://github.com/dreamerlzl" style="text-decoration:none" title="github" >
       <i style="font-size:24px" class="fa">&#xf09b;</i>
     </a>
   </th>
   <th>
-    <a href="https://bangumi.tv/user/283052">
-      <img src="http://bgm.tv/img/ico/bgm80-15.png" border="0" alt="" />
+    <a href="https://dreamerlzl.xlog.page/" title="xlog" >
+      <img src="/assets/img/xlog.svg" border="0" style="width: 1.2em; height: 1.2em;"/>
+    </a>
+  </th>
+  <th>
+    <a href="https://bangumi.tv/user/283052" title="bgm.tv" >
+      <img src="http://bgm.tv/img/ico/bgm80-15.png" border="0" />
     </a>
   </th>
 </tr>
