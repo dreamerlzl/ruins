@@ -5,7 +5,7 @@ bg: ova.jpg
 bg_percent: 85
 pagination:
   data: collections.posts
-  size: 10
+  size: 5
   reverse: true
   alias: posts
 ---
@@ -19,7 +19,7 @@ pagination:
   </p>
   <em>{{ post.date | date: "%Y-%m-%d" }}</em>
   <p class="mt-4">{{ post.data.post_excerpt }}...</p>
-  
+
   <div class="flex justify-between items-center mt-4">
     <div class="flex-1 pr-4">
       {% for tag in post.data.tags %}
