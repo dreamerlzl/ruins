@@ -41,7 +41,7 @@ bg_percent: 75
 
 # Overview
 
-- A lifelong learner for self-reliance
+- A lifelong learner: 只有学习让我感觉到自己的时间在流动
 - Currently a software engineer
 - Besides learning & working
   - 📚 reading & manga & anime
