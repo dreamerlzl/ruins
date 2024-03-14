@@ -4,6 +4,8 @@ bg: alpha.jpg
 bg_percent: 75
 ---
 
+<div style="display: flex; flex-direction: column">
+<div>
 <figure style="text-align: center;  padding-left: 10em; float: right; display: block;">
 <table style="border-collapse: separate; border-spacing: 1px 1px;" >
 <tr>
@@ -48,6 +50,7 @@ bg_percent: 75
   - 🔭 star gazing
   - 🐦 bird watching
 
+</div>
 <!--
 # My Favorite
 - mangas
@@ -66,11 +69,23 @@ bg_percent: 75
   - [Girls und Panzer del Film/少女与战车剧场版](http://bangumi.tv/subject/72266)
 -->
 
-# How this site is built?
+<div>
+<h1> How this site is built? </h1>
 
 - I have little knowledge about frontend stack,
 - But I believe you can build a much better one after reading the following
   blogs!
   - [11ty 101](https://snipcart.com/blog/11ty-tutorial)
   - [add search to 11ty via elasticlunr](https://www.belter.io/eleventy-search/)
+  - [giscus for comments](https://giscus.app/)
 - [the repo of this site(forked from another blog project)](https://github.com/dreamerlzl/ruins)
+
+</div>
+
+<div>
+<h1> Some cool guys I know about... </h1>
+
+- [爱尔兰三木, v2ex群友](https://youngforest.github.io)
+
+</div>
+</div>
