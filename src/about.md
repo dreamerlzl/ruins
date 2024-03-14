@@ -1,6 +1,5 @@
 ---
 layout: about
-title: Persona
 bg: alpha.jpg
 bg_percent: 75
 ---
@@ -36,7 +35,7 @@ bg_percent: 75
 </tr>
 </table>
 <img src="/assets/img/selfie.jpg" style="width:250px;"></img>
-<figcaption>Taken by my friend, Binbin Yang, in 2021.</figcaption>
+<figcaption>四明山, 2023</figcaption>
 </figure>
 
 # Overview

@@ -9,19 +9,28 @@ pagination:
   reverse: true
 ---
 
+<div class="flex" style="flex-direction: row;">
+    <div>
 {% block head %}
   <link rel="stylesheet" href="{{ '/assets/styles/archive.css' | url }}">
     <link rel="stylesheet" href="{{ '/assets/styles/external.css' | url }}">
     <!-- <link rel="stylesheet" href="{{ '/assets/styles/materialize.min.css' | url }}" media="screen,projection"> -->
       <!--Import Google Icon Font-->
       <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-    {% endblock %}
-    <p>
-      You can also search blogs by
-      <a href="/tags" class="btn btn-shadow-drop btn-shadow-drop--blue">tags</a>
-      or
-      <a href="/search" class="btn btn-shadow-drop btn-shadow-drop--purple">blog titles</a>.
-    </p>
+{% endblock %}
+
+    <div class="field">
+      <input type="search" placeholder="blog title or tags" id="searchField" style="box-shadow: 0 0 5px rgba(0,0,0,0.1); border-radius: 5px; border: 1px solid #ccc;">
+    </div>
+    <ol id="searchResults"></ol>
+    <div id="noResultsFound" style="display: none">
+      <p>No results found.</p>
+    </div>
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"
+    ></script>
+    <script type="text/javascript" src="/js/search.js"></script>
     <br>
       <ul>
         {% for post in posts %}
@@ -60,3 +69,16 @@ pagination:
             Next
           {% endif %}
         </p>
+    </div>
+
+    <div>
+        <div style="display: flex; flex-wrap: wrap; flex-direction: row; width: 250px">
+        {% for tag in collections.tagList %}
+            <a href="/tags/{{ tag }}"><button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold border border-gray-400 rounded shadow" style="margin: .25em; padding: .25em">
+                {{ tag }}
+            </button>
+            </a>
+        {% endfor %}
+        </div>
+    </div>
+</div>
