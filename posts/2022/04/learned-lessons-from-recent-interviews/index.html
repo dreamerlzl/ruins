@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  	<meta name='viewport' content='width=device-width'>
+
+    <title>dreamerlzl's ruins</title>
+    <meta name='description' content=Welcome to visit my ruins>
+    <meta name="theme-color" content="#ffffff"/>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json" />
+
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="/assets/styles/tailwind.css" rel="stylesheet" />
+    <link href="/assets/styles/index.css" rel="stylesheet" />
+    <link href="/assets/styles/nav.css" rel="stylesheet" />
+    <link href="https://dreamerlzl.xyz/feed.xml" rel="alternate" type="application/rss+xml" title="Wright" />
+    
+    <style>
+    body {
+      background-image: linear-gradient(transparent 5%, white 100%), url('/assets/img/cover/rust_bg.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    </style>
+    
+
+    
+    
+    <script>
+      const isDarkMode = () => localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (isDarkMode()) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+  </head>
+
+  <body class="dark:text-white dark:bg-black">
+    
+      <!-- <div style="
+          background-image: linear-gradient(transparent, white 100%), url('/assets/img/cover/rust_bg.jpg');
+          background-size: cover;
+          height:480px;
+      ">
+      </div> -->
+    
+
+    
+<div class="min-h-screen flex flex-col">
+
+<main class="flex-1 w-10/12 max-w-screen-sm md:max-w-screen-md mx-auto">
+
+  
+<header class="header">
+    <ul class="main-nav" style="display: flex; align-items: center;">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blogs">Blogs</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/feed.xml">
+            <img src="/assets/img/rss.svg" alt="RSS Feed" style="width: 1.2em; height: 1.2em;" >
+        </a></li>
+    </ul>
+</header>
+<br>
+
+
+<p class="text-5xl md:text-6xl font-black pt-10 md:pt-30 pb-4 leading-tight">
+    learned lessons from recent interviews
+</p>
+
+<div>
+    <em>2022-04-24</em> &middot;
+    <span>10 min read</span>
+</div>
+
+<div class="mt-3 pb-10">
+  
+    
+  
+    
+      <a href="/tags/interview">
+        <span class="post-tag">interview</span>
+      </a>
+    
+  
+  </div>
+
+<div class="prose dark:prose-invert hover:prose-a:text-blue-500">
+  <p>After a year of my first job, I decided to move on and find better opportunies.</p>
+<h1 id="roadmap" tabindex="-1"><a class="header-anchor" href="#roadmap"><span>roadmap</span></a></h1>
+<ul>
+<li><a href="#before-interviewing">before interviewing</a></li>
+<li><a href="#leetcode-grind">leetcode grind</a></li>
+<li><a href="#questions-to-ask-during-interviews">question to ask during interviews</a>
+<ul>
+<li>what you should ask from the interviewers, which plays a key role in selecting the final offer</li>
+</ul>
+</li>
+<li><a href="#my-experience">my experience interviewing</a>
+<ul>
+<li>Microsoft</li>
+<li><a href="http://Crypto.com">Crypto.com</a> (Shenzhen)</li>
+<li>Zoom</li>
+</ul>
+</li>
+<li><a href="#getting-the-offer">getting the offer</a></li>
+</ul>
+<p>&nbsp;</p>
+<h1 id="before-interviewing" tabindex="-1"><a class="header-anchor" href="#before-interviewing"><span>before interviewing</span></a></h1>
+<ul>
+<li>things to know before interviewing a company
+<ul>
+<li>how many rounds &amp; how they would be scheduled
+<ul>
+<li>e.g. Microsoft will arrange 3-4 rounds of interview in one day</li>
+<li>e.g. Zoom only schedules interviews from 9 a.m. to 11:30 a.m and 1:30 p.m. to 5 p.m.</li>
+</ul>
+</li>
+<li>recent news of the company
+<ul>
+<li>linkedin social, maimai, teamblind, etc.</li>
+<li>e.g. when I am interviewing Zoom &amp; <a href="http://Crypto.com">Crypto.com</a>, they are buidling new teams and hiring crazily
+<ul>
+<li>feedback is fast and more HCs</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>you may not perform well during your first or second interview
+<ul>
+<li>I felt very nervous during my first one and performed pretty bad</li>
+<li>probably not a good idea to start with your dream company!</li>
+</ul>
+</li>
+<li>if you get an offer and there is a short deadline
+<ul>
+<li><strong>it's OK to accept it first and then renege</strong></li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<h1 id="leetcode-grind" tabindex="-1"><a class="header-anchor" href="#leetcode-grind"><span>leetcode grind</span></a></h1>
+<ul>
+<li>get a rough idea about what leetcode challenges the company would give you</li>
+<li>I don't follow the traditional path of preparing for leetcode
+<ul>
+<li>for each topic, I would only spend 5-10 mins for each problem</li>
+<li>then I just go to the solutions directly, analyze and remember the pattern</li>
+<li>after going through 5-10 problems, I will try to solve some new problems by adapting the newly learned pattern</li>
+<li>in this way, you could prepare for a lot of common &amp; classic problems in a short time</li>
+<li>this method is originally proposed <a href="https://www.reddit.com/r/cscareerquestions/comments/6luszf/a_leetcode_grinding_guide/">here</a></li>
+</ul>
+</li>
+<li>I also find <a href="https://1lib.tw/book/16346646/98e271">grokking the coding interview</a> very helpful</li>
+</ul>
+<p>&nbsp;</p>
+<h1 id="questions-to-ask-during-interviews" tabindex="-1"><a class="header-anchor" href="#questions-to-ask-during-interviews"><span>questions to ask during interviews</span></a></h1>
+<ul>
+<li><strong>MUST</strong> ask questions to show your interest in the position and the company</li>
+<li>aspects
+<ul>
+<li>if you want to find a less stressful job, ask the following
+<ul>
+<li>management style(micro/macro), report frequency(weekly, monthly or daily?)</li>
+<li>how performance review is conducted, KPI/OKR (ask about the frequencey)?</li>
+<li>what kind of meetings happen per week?</li>
+<li><strong>release period</strong>(being too short may indicate heavy workload)</li>
+<li>what keeps you at the company? what do you like the least?</li>
+</ul>
+</li>
+<li>role &amp; position
+<ul>
+<li>any on call?</li>
+<li>daily tasks of the position</li>
+<li>success definitions during the probation period</li>
+<li>tech stacks</li>
+</ul>
+</li>
+<li>practice
+<ul>
+<li>bug fix, refactoring, rollback (<strong>you would get some insights about the tech debts of the team</strong>)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ref
+<ul>
+<li><a href="https://github.com/viraptor/reverse-interview">github: reverse interview</a></li>
+<li><a href="https://jvns.ca/blog/2013/12/30/questions-im-asking-in-interviews/">Julian Evan's suggestions</a></li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<h1 id="my-experience" tabindex="-1"><a class="header-anchor" href="#my-experience"><span>my experience</span></a></h1>
+<h2 id="microsoft" tabindex="-1"><a class="header-anchor" href="#microsoft"><span>Microsoft</span></a></h2>
+<ul>
+<li>the first round is an HR phone interview
+<ul>
+<li>expected salary, why you leave, your career goals</li>
+</ul>
+</li>
+<li>there is a medium leetcode per technical round
+<ul>
+<li>either the exact same problem on leetcode or a variant</li>
+</ul>
+</li>
+<li>the interviewer would be glad to see you design the test cases first
+<ul>
+<li>to clarify the question</li>
+<li>Microsoft team value Test Driven Development (they have no quality assurance)</li>
+</ul>
+</li>
+<li>if you are not very confident during the leetcode challenge, talk to your interviewers!
+<ul>
+<li>they are not your enemies and would sometimes give you hints</li>
+</ul>
+</li>
+<li>around 35 mins for you to finish it</li>
+<li>if you are not a new grad, there will be questions related to your past experience
+<ul>
+<li>only talk about the highlights</li>
+<li>prepare how to explain your project and role in English</li>
+</ul>
+</li>
+</ul>
+<h3>offer</h3>
+<ul>
+<li>the offer would be permanent
+<ul>
+<li>i.e. 不是多少年，而是一签就是终生雇佣</li>
+</ul>
+</li>
+<li>15 paid leave + 15 sick leave</li>
+</ul>
+<h2 id="crypto.com" tabindex="-1"><a class="header-anchor" href="#crypto.com"><span><a href="http://Crypto.com">Crypto.com</a></span></a></h2>
+<ul>
+<li>a global blockchain financial company
+<ul>
+<li>allows remote or hybrid working</li>
+</ul>
+</li>
+<li>the Shenzhen base is hiring backend &amp; client dev for Crypto Wallet</li>
+<li>the interviewers care a lot about your understanding of the crypto industry
+<ul>
+<li>the business model</li>
+<li>future directions and growth</li>
+</ul>
+</li>
+<li>no leetcode, but system design and project experience
+<ul>
+<li>the system design problem is about high concurrency, high availability and distributed transactions</li>
+</ul>
+</li>
+</ul>
+<h3>offer</h3>
+<ul>
+<li>cryptos for employees outside mainland China
+<ul>
+<li>cash (10% of your annual package) instead for mainland employees</li>
+</ul>
+</li>
+<li>bonus based on your performance: 0-4 months</li>
+<li>3 day wfh per week</li>
+</ul>
+<h2 id="zoom" tabindex="-1"><a class="header-anchor" href="#zoom"><span>Zoom</span></a></h2>
+<ul>
+<li>like <a href="http://crypto.com">crypto.com</a>, system design + project experience + questions related to the position
+<ul>
+<li>you need to solve leetcode in only 1 round</li>
+</ul>
+</li>
+<li>2 separate technical interviews</li>
+<li>Zoom's HRs are very professional and value thorough communication
+<ul>
+<li>ask much as you can</li>
+</ul>
+</li>
+</ul>
+<h3>offer</h3>
+<ul>
+<li>1 day wfh per week</li>
+<li>10 paid leave + 20 sick leave</li>
+<li>a large portion of the package is restricted stock units</li>
+</ul>
+<p>&nbsp;</p>
+<h1 id="getting-the-offer" tabindex="-1"><a class="header-anchor" href="#getting-the-offer"><span>getting the offer</span></a></h1>
+<ul>
+<li>go to others for help
+<ul>
+<li>salary negotation</li>
+<li>how to renege a offer</li>
+<li>how to communicate with HR in a proper way
+<ul>
+<li><strong>I did lose an offer because of this, by asking too many trifle questions</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>check teamblind, indeed company ratings or maimai to get more info about the department
+<ul>
+<li>e.g. in maimai, some ex-microsofter list the departments where heavy workload and overtime are common</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<div class="mt-16 py-8 border-t-2 flex justify-between items-center">
+  <div class="flex items-center flex-1">
+    <div class="inline-block h-8 w-8 bg-white-700 rounded-full mr-2 flex justify-center items-center">Z</div>
+    <span class="text-lg font-medium">Ziliang Lin</span>
+  </div>
+  <p class="text-sm flex-1">Talks about software engineering, digital nomad and self-reliance.</p>
+</div>
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="dreamerlzl/ruins"
+        data-repo-id="R_kgDOHM33aQ"
+        data-category="General"
+        data-category-id="DIC_kwDOHM33ac4Cd-DF"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+</main>
+
+<footer class="mt-8 bg-gray-200 dark:bg-gray-900 py-8 flex-shrink-0">
+  <div class="max-w-screen-sm md:max-w-screen-md mx-auto px-8">
+    <p class="text-sm py-2 text-right">
+    Powered by <a href="https://www.11ty.dev/" class="simple-link" >eleventy</a>
+    and 
+    <a href="https://www.belter.io/eleventy-search/" class="simple-link" >elasticlunr</a>
+    </p>
+  </div>
+</footer>
+
+</div>
+
+
+  <script>
+    document.getElementById("toggleDarkMode").addEventListener("click", function() {
+      if (isDarkMode()) {
+        localStorage.theme = 'light'
+        document.documentElement.classList.remove('dark')
+      } else {
+        localStorage.theme = 'dark'
+        document.documentElement.classList.add('dark')
+      }
+    });
+  </script>
+  </body>
+</html>

@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  	<meta name='viewport' content='width=device-width'>
+
+    <title>dreamerlzl's ruins</title>
+    <meta name='description' content=Welcome to visit my ruins>
+    <meta name="theme-color" content="#ffffff"/>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json" />
+
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="/assets/styles/tailwind.css" rel="stylesheet" />
+    <link href="/assets/styles/index.css" rel="stylesheet" />
+    <link href="/assets/styles/nav.css" rel="stylesheet" />
+    <link href="https://dreamerlzl.xyz/feed.xml" rel="alternate" type="application/rss+xml" title="Wright" />
+    
+    <style>
+    body {
+      background-image: linear-gradient(transparent 5%, white 100%), url('/assets/img/cover/rust_bg.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    </style>
+    
+
+    
+    
+    <script>
+      const isDarkMode = () => localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (isDarkMode()) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+  </head>
+
+  <body class="dark:text-white dark:bg-black">
+    
+      <!-- <div style="
+          background-image: linear-gradient(transparent, white 100%), url('/assets/img/cover/rust_bg.jpg');
+          background-size: cover;
+          height:480px;
+      ">
+      </div> -->
+    
+
+    
+<div class="min-h-screen flex flex-col">
+
+<main class="flex-1 w-10/12 max-w-screen-sm md:max-w-screen-md mx-auto">
+
+  
+<header class="header">
+    <ul class="main-nav" style="display: flex; align-items: center;">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blogs">Blogs</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/feed.xml">
+            <img src="/assets/img/rss.svg" alt="RSS Feed" style="width: 1.2em; height: 1.2em;" >
+        </a></li>
+    </ul>
+</header>
+<br>
+
+
+<p class="text-5xl md:text-6xl font-black pt-10 md:pt-30 pb-4 leading-tight">
+    virtualization on linux
+</p>
+
+<div>
+    <em>2023-10-13</em> &middot;
+    <span>3 min read</span>
+</div>
+
+<div class="mt-3 pb-10">
+  
+    
+  
+    
+      <a href="/tags/linux">
+        <span class="post-tag">linux</span>
+      </a>
+    
+  
+    
+      <a href="/tags/virtualization">
+        <span class="post-tag">virtualization</span>
+      </a>
+    
+  
+  </div>
+
+<div class="prose dark:prose-invert hover:prose-a:text-blue-500">
+  <p>Beginner's guide to setup VMs on Linux, without the pain of VirtualBox</p>
+<h1 id="why%3F" tabindex="-1"><a class="header-anchor" href="#why%3F"><span>Why?</span></a></h1>
+<ul>
+<li>Virtualbox's installation is more tiresome</li>
+<li>Virutalbox's CLI looks more complex. Check it
+<a href="https://www.oracle.com/technical-resources/articles/it-infrastructure/admin-manage-vbox-cli.html">here</a></li>
+</ul>
+<h1 id="resort%3A-libvirt-%2B-virt-install" tabindex="-1"><a class="header-anchor" href="#resort%3A-libvirt-%2B-virt-install"><span>Resort: libvirt + virt-install</span></a></h1>
+<ul>
+<li>They are open-source and free</li>
+<li>There is also a GUI based on it, called <strong>virt-manager</strong></li>
+<li>Unlike virtualbox, you can find installation guides easily from major distro's
+official site:
+<ul>
+<li><a href="https://manpages.ubuntu.com/manpages/trusty/man1/virt-install.1.html#examples">Ubuntu</a></li>
+<li><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-guest_virtual_machine_installation_overview-creating_guests_with_virt_install">Fedora</a></li>
+<li><a href="https://wiki.archlinux.org/title/libvirt">Arch</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="how-do-i-create-a-new-vm-in-terminal%3F" tabindex="-1"><a class="header-anchor" href="#how-do-i-create-a-new-vm-in-terminal%3F"><span>How do I create a new VM in terminal?</span></a></h1>
+<ul>
+<li>install an OS iso, and in command line</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># here we use ubuntu 22.04.3 as an example</span>
+virt-install <span class="token punctuation">\</span>
+  <span class="token parameter variable">--connect</span> qemu:///system <span class="token punctuation">\</span>
+  <span class="token parameter variable">--name</span> <span class="token variable">$YOUR_VM_NAME</span> <span class="token punctuation">\</span>
+  --os-variant ubuntu22.04 <span class="token punctuation">\</span>
+  <span class="token parameter variable">--vcpus</span> <span class="token number">2</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">--ram</span> <span class="token number">2048</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">--disk</span> <span class="token assign-left variable">size</span><span class="token operator">=</span><span class="token number">20</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">--location</span> /tmp/ubuntu-22.04.3-live-server-amd64.iso,kernel<span class="token operator">=</span>casper/vmlinuz,initrd<span class="token operator">=</span>casper/initrd <span class="token punctuation">\</span>
+  <span class="token parameter variable">--network</span> network:default <span class="token punctuation">\</span>
+  <span class="token parameter variable">--nographics</span> <span class="token punctuation">\</span>
+  --extra-args <span class="token string">"console=ttyS0"</span></code></pre>
+<ul>
+<li>you can check the manual of
+<a href="https://linux.die.net/man/1/virt-install">virt-install</a> for the meaning of
+each flag</li>
+</ul>
+<h1 id="how-do-i-create-a-new-vm-with-gui%3F" tabindex="-1"><a class="header-anchor" href="#how-do-i-create-a-new-vm-with-gui%3F"><span>How do I create a new VM with GUI?</span></a></h1>
+<ul>
+<li>virt-manager is straightforward. If you have previous experience with VMWare
+Fusion, Parallel Desktop, VirtualBOx, it's easy to start with.</li>
+<li>Here is a redhat blog for how to use it:
+<a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-creating_guests_with_virt_manager">the blog</a></li>
+</ul>
+<h1 id="vm-management" tabindex="-1"><a class="header-anchor" href="#vm-management"><span>VM management</span></a></h1>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># list all the VMs (their names) created by virt-install</span>
+<span class="token function">virsh</span> list <span class="token parameter variable">--all</span> <span class="token comment"># this will only show the VMs created by the current user</span>
+
+<span class="token comment"># turn on a VM which in `shut off` state</span>
+<span class="token function">virsh</span> start <span class="token operator">&lt;</span>VM_name<span class="token operator">></span>
+
+<span class="token comment"># gracefully shutdown a VM</span>
+<span class="token function">virsh</span> <span class="token function">shutdown</span> <span class="token operator">&lt;</span>VM_name<span class="token operator">></span>
+
+<span class="token comment"># forcefully shutdown a VM</span>
+<span class="token function">virsh</span> destroy <span class="token operator">&lt;</span>VM_name<span class="token operator">></span>
+
+<span class="token comment"># remove a vm when it's off</span>
+<span class="token function">virsh</span> undefine <span class="token operator">&lt;</span>name<span class="token operator">></span></code></pre>
+<ul>
+<li>you can find more
+<a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/chap-managing_guest_virtual_machines_with_virsh">here</a></li>
+</ul>
+
+</div>
+
+<div class="mt-16 py-8 border-t-2 flex justify-between items-center">
+  <div class="flex items-center flex-1">
+    <div class="inline-block h-8 w-8 bg-white-700 rounded-full mr-2 flex justify-center items-center">Z</div>
+    <span class="text-lg font-medium">Ziliang Lin</span>
+  </div>
+  <p class="text-sm flex-1">Talks about software engineering, digital nomad and self-reliance.</p>
+</div>
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="dreamerlzl/ruins"
+        data-repo-id="R_kgDOHM33aQ"
+        data-category="General"
+        data-category-id="DIC_kwDOHM33ac4Cd-DF"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+</main>
+
+<footer class="mt-8 bg-gray-200 dark:bg-gray-900 py-8 flex-shrink-0">
+  <div class="max-w-screen-sm md:max-w-screen-md mx-auto px-8">
+    <p class="text-sm py-2 text-right">
+    Powered by <a href="https://www.11ty.dev/" class="simple-link" >eleventy</a>
+    and 
+    <a href="https://www.belter.io/eleventy-search/" class="simple-link" >elasticlunr</a>
+    </p>
+  </div>
+</footer>
+
+</div>
+
+
+  <script>
+    document.getElementById("toggleDarkMode").addEventListener("click", function() {
+      if (isDarkMode()) {
+        localStorage.theme = 'light'
+        document.documentElement.classList.remove('dark')
+      } else {
+        localStorage.theme = 'dark'
+        document.documentElement.classList.add('dark')
+      }
+    });
+  </script>
+  </body>
+</html>

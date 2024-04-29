@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  	<meta name='viewport' content='width=device-width'>
+
+    <title>dreamerlzl's ruins</title>
+    <meta name='description' content=Welcome to visit my ruins>
+    <meta name="theme-color" content="#ffffff"/>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json" />
+
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="/assets/styles/tailwind.css" rel="stylesheet" />
+    <link href="/assets/styles/index.css" rel="stylesheet" />
+    <link href="/assets/styles/nav.css" rel="stylesheet" />
+    <link href="https://dreamerlzl.xyz/feed.xml" rel="alternate" type="application/rss+xml" title="Wright" />
+    
+    <style>
+    body {
+      background-image: linear-gradient(transparent 5%, white 100%), url('/assets/img/cover/rust_bg.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    </style>
+    
+
+    
+    
+    <script>
+      const isDarkMode = () => localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (isDarkMode()) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+  </head>
+
+  <body class="dark:text-white dark:bg-black">
+    
+      <!-- <div style="
+          background-image: linear-gradient(transparent, white 100%), url('/assets/img/cover/rust_bg.jpg');
+          background-size: cover;
+          height:480px;
+      ">
+      </div> -->
+    
+
+    
+<div class="min-h-screen flex flex-col">
+
+<main class="flex-1 w-10/12 max-w-screen-sm md:max-w-screen-md mx-auto">
+
+  
+<header class="header">
+    <ul class="main-nav" style="display: flex; align-items: center;">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blogs">Blogs</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/feed.xml">
+            <img src="/assets/img/rss.svg" alt="RSS Feed" style="width: 1.2em; height: 1.2em;" >
+        </a></li>
+    </ul>
+</header>
+<br>
+
+
+<p class="text-5xl md:text-6xl font-black pt-10 md:pt-30 pb-4 leading-tight">
+    my receipe for writing dockerfile
+</p>
+
+<div>
+    <em>2022-04-20</em> &middot;
+    <span>3 min read</span>
+</div>
+
+<div class="mt-3 pb-10">
+  
+    
+  
+    
+      <a href="/tags/docker">
+        <span class="post-tag">docker</span>
+      </a>
+    
+  
+    
+      <a href="/tags/container">
+        <span class="post-tag">container</span>
+      </a>
+    
+  
+  </div>
+
+<div class="prose dark:prose-invert hover:prose-a:text-blue-500">
+  <p>A beginner's guide to write acceptable dockerfiles</p>
+<h2 id="ov" tabindex="-1"><a class="header-anchor" href="#ov"><span>ov</span></a></h2>
+<ul>
+<li>use alpine linux or tag with &quot;slim&quot;
+<ul>
+<li>smaller</li>
+</ul>
+</li>
+<li>use multi-stage build</li>
+<li>combine multiple RUNs in one RUN
+<ul>
+<li>logically the commands are in a group</li>
+</ul>
+</li>
+<li>use <code>.dockerignore</code></li>
+<li>use <code>dive</code>, a tool to check how to slim down image size
+<ul>
+<li><a href="https://github.com/wagoodman/dive">dive</a></li>
+</ul>
+</li>
+<li>use distroless by google
+<ul>
+<li><a href="https://github.com/GoogleContainerTools/distroless">github</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="caching" tabindex="-1"><a class="header-anchor" href="#caching"><span>caching</span></a></h2>
+<ul>
+<li>to better utilize caching of the intermediate images, move the parts that are unlikely to change at the top of the dockerfile
+<ul>
+<li>like <code>ADD</code>, <code>COPY</code></li>
+<li>requirements install</li>
+</ul>
+</li>
+</ul>
+<h2 id="inspect" tabindex="-1"><a class="header-anchor" href="#inspect"><span>inspect</span></a></h2>
+<ul>
+<li>view the size of intermediate images
+<ul>
+<li><code>docker image history &lt;image&gt;:&lt;tag&gt;</code></li>
+</ul>
+</li>
+<li>dive</li>
+</ul>
+<h2 id="apt-related" tabindex="-1"><a class="header-anchor" href="#apt-related"><span>apt-related</span></a></h2>
+<ul>
+<li>combine <code>apt-get update</code> and <code>apt-get install</code>, and append <code>rm -rf /var/lib/apt/lists/*</code> in the end
+<ul>
+<li>state information for each package resource specified in apt's <code>sources.list</code></li>
+<li>see <a href="https://askubuntu.com/questions/179955/var-lib-apt-lists-is-huge">this</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="gosu" tabindex="-1"><a class="header-anchor" href="#gosu"><span>gosu</span></a></h2>
+<ul>
+<li>when you need to use <code>sudo</code>, use <code>gosu</code> instead
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/151915585">why to use gosu?</a></li>
+</ul>
+</li>
+<li>commonly, <code>gosu nobody true</code> is used to confirm that the installed gosu is OK</li>
+<li>typically gosu is later used in <code>entrypoint.sh</code></li>
+<li><a href="https://github.com/tianon/gosu/blob/master/INSTALL.md">how to install gosu in dockerfile?</a></li>
+<li>commonly used to step from root to non-root user and run the app
+<ul>
+<li>e.g. <code>exec gosu &lt;username&gt; &lt;command&gt;</code> will run the command as username</li>
+</ul>
+</li>
+</ul>
+<h2 id="ref" tabindex="-1"><a class="header-anchor" href="#ref"><span>ref</span></a></h2>
+<ul>
+<li><a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/">best practice for dockerfiles</a></li>
+<li><a href="https://towardsdatascience.com/slimming-down-your-docker-images-275f0ca9337e">highly recommended blog</a></li>
+<li><a href="https://learnk8s.io/blog/smaller-docker-images">blog: distroless</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/115845957">zhihu: scratch or alpine+</a></li>
+<li><a href="https://www.kancloud.cn/hanxt/elk/158426">elasticsearch dockfile analysis</a></li>
+<li><a href="https://jkutner.github.io/2021/04/26/write-good-dockerfile.html">good blog summarizinig tips for writing dockerfiles</a></li>
+</ul>
+
+</div>
+
+<div class="mt-16 py-8 border-t-2 flex justify-between items-center">
+  <div class="flex items-center flex-1">
+    <div class="inline-block h-8 w-8 bg-white-700 rounded-full mr-2 flex justify-center items-center">Z</div>
+    <span class="text-lg font-medium">Ziliang Lin</span>
+  </div>
+  <p class="text-sm flex-1">Talks about software engineering, digital nomad and self-reliance.</p>
+</div>
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="dreamerlzl/ruins"
+        data-repo-id="R_kgDOHM33aQ"
+        data-category="General"
+        data-category-id="DIC_kwDOHM33ac4Cd-DF"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+</main>
+
+<footer class="mt-8 bg-gray-200 dark:bg-gray-900 py-8 flex-shrink-0">
+  <div class="max-w-screen-sm md:max-w-screen-md mx-auto px-8">
+    <p class="text-sm py-2 text-right">
+    Powered by <a href="https://www.11ty.dev/" class="simple-link" >eleventy</a>
+    and 
+    <a href="https://www.belter.io/eleventy-search/" class="simple-link" >elasticlunr</a>
+    </p>
+  </div>
+</footer>
+
+</div>
+
+
+  <script>
+    document.getElementById("toggleDarkMode").addEventListener("click", function() {
+      if (isDarkMode()) {
+        localStorage.theme = 'light'
+        document.documentElement.classList.remove('dark')
+      } else {
+        localStorage.theme = 'dark'
+        document.documentElement.classList.add('dark')
+      }
+    });
+  </script>
+  </body>
+</html>

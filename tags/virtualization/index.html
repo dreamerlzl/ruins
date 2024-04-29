@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  	<meta name='viewport' content='width=device-width'>
+
+    <title>dreamerlzl's ruins</title>
+    <meta name='description' content=Welcome to visit my ruins>
+    <meta name="theme-color" content="#ffffff"/>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json" />
+
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="/assets/styles/tailwind.css" rel="stylesheet" />
+    <link href="/assets/styles/index.css" rel="stylesheet" />
+    <link href="/assets/styles/nav.css" rel="stylesheet" />
+    <link href="https://dreamerlzl.xyz/feed.xml" rel="alternate" type="application/rss+xml" title="Wright" />
+    
+
+    
+    
+    <script>
+      const isDarkMode = () => localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (isDarkMode()) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+  </head>
+
+  <body class="dark:text-white dark:bg-black">
+    
+
+    
+<div class="min-h-screen flex flex-col">
+
+<main class="flex-1 w-10/12 max-w-screen-sm md:max-w-screen-md mx-auto">
+
+  
+
+<header class="header">
+    <ul class="main-nav" style="display: flex; align-items: center;">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blogs">Blogs</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/feed.xml">
+            <img src="/assets/img/rss.svg" alt="RSS Feed" style="width: 1.2em; height: 1.2em;" >
+        </a></li>
+    </ul>
+</header>
+<br>
+
+
+<div class="py-4 sm:py-10">
+  <p>
+    <span class="text-2xl sm:text-4xl font-bold hover:underline"><a href="/posts/2023/10/virtualization-on-linux/">virtualization on linux</a></span>
+  </p>
+  <em>2023-10-13</em>
+  <p class="mt-4">
+Beginner's guide to setup VMs on Linux, without the pain of VirtualBox
+<p><!-- <span class="hover:underline text-indigo-500"><a href="/posts/2023/10/virtualization-on-linux/">Read More</a></span> --></p>
+  </p>
+  <div style="display: flex; flex-direction: row">
+<p><a href="/tags/linux" class="post-tag">linux</a></p>
+<p><a href="/tags/virtualization" class="post-tag">virtualization</a></p>
+  </div>
+</div>
+
+
+
+</main>
+
+<footer class="mt-8 bg-gray-200 dark:bg-gray-900 py-8 flex-shrink-0">
+  <div class="max-w-screen-sm md:max-w-screen-md mx-auto px-8">
+    <p class="text-sm py-2 text-right">
+    Powered by <a href="https://www.11ty.dev/" class="simple-link" >eleventy</a>
+    and 
+    <a href="https://www.belter.io/eleventy-search/" class="simple-link" >elasticlunr</a>
+    </p>
+  </div>
+</footer>
+
+</div>
+
+
+  <script>
+    document.getElementById("toggleDarkMode").addEventListener("click", function() {
+      if (isDarkMode()) {
+        localStorage.theme = 'light'
+        document.documentElement.classList.remove('dark')
+      } else {
+        localStorage.theme = 'dark'
+        document.documentElement.classList.add('dark')
+      }
+    });
+  </script>
+  </body>
+</html>
