@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "build": "npx @11ty/eleventy & npx tailwindcss -i ./tailwind.css -o _site/assets/styles/tailwind.css",
-    "build-ghpages": "npx @11ty/eleventy --pathprefix 'ruins' & npx tailwindcss -i ./tailwind.css -o _site/assets/styles/tailwind.css"
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/ruins/ & npx tailwindcss -i ./tailwind.css -o _site/assets/styles/tailwind.css"
   },
   "keywords": [],
   "author": "",
